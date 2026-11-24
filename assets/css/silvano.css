@@ -123,3 +123,35 @@ a { color: inherit; }
   .hero-copy > * { max-width: 620px; }
   .sticky-book { display: none; }
 }
+
+/* Client review, placed above the booking calendar */
+.review { margin: 0 0 var(--space-6); padding: var(--space-5) 0; border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); max-width: 760px; }
+.review blockquote { margin: 0; font-family: var(--font-display); font-style: italic; font-size: 22px; line-height: 1.45; color: var(--cream); }
+.review figcaption { margin-top: var(--space-4); font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); }
+@media (min-width: 1024px) { .review blockquote { font-size: 28px; } .review figcaption { font-size: 14px; } }
+.book-b .review { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* Full logo lockup (wordmark + tagline) */
+.site-header img { width: 200px; }
+.site-footer img { width: 280px; }
+@media (min-width: 768px) { .site-header img { width: 260px; } }
+
+/* Real grooms mosaic (wedding) */
+.sec-head { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); text-align: center; max-width: 680px; margin: 0 auto var(--space-5); }
+.grooms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-flow: dense; gap: var(--space-2); }
+.groom { position: relative; margin: 0; overflow: hidden; background: var(--black); }
+.groom img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.groom--tall { aspect-ratio: 2 / 3; }
+.groom--wide { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
+.groom figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: var(--space-2) var(--space-3); background: var(--overlay); font-size: 13px; line-height: 1.4; color: var(--cream); }
+.sec-cta { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); text-align: center; margin-top: var(--space-5); }
+.sec-cta .small { margin: 0; color: var(--cream); }
+.credit { margin: var(--space-3) 0 0; font-size: 12px; line-height: 1.5; color: var(--cream); text-align: center; }
+@media (min-width: 1024px) {
+  .grooms { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-3); }
+  .groom--tall { aspect-ratio: auto; grid-row: 1 / 3; }
+  .groom--tall:first-child { grid-column: 1; }
+  .groom--tall:last-child { grid-column: 4; }
+  .groom--wide { grid-column: 2 / 4; }
+  .groom figcaption { font-size: 14px; }
+}
