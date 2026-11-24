@@ -164,3 +164,7 @@ a { color: inherit; }
 .review figcaption { font-size: 12px; }
 @media (min-width: 768px) { .review { padding: var(--space-7) var(--space-6) var(--space-5); } .review::before { font-size: 88px; } .review blockquote { font-size: 24px; } }
 @media (min-width: 1024px) { .review blockquote { font-size: 28px; } .review figcaption { font-size: 14px; } }
+
+/* Hero still: only shown when reduced motion is on (otherwise it covered the film) */
+.hero-media .hero-still { display: none; }
+@media (prefers-reduced-motion: reduce) { .hero-media .hero-still { display: block; } }
