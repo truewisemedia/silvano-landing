@@ -1,0 +1,125 @@
+/* Silvano landing pages. Values from the Silvano design system tokens only. */
+@font-face { font-family: "Playfair Display"; src: url("../fonts/PlayfairDisplay-Variable.woff2") format("woff2"); font-weight: 400 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url("../fonts/PlayfairDisplay-Italic-Variable.woff2") format("woff2"); font-weight: 400 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "Mulish"; src: url("../fonts/Mulish-Variable.woff2") format("woff2"); font-weight: 200 1000; font-style: normal; font-display: swap; }
+
+:root {
+  --black: #000000; --espresso: #48322D; --gold: #BFA75D; --cream: #EBDDB2; --white: #FFFFFF; --error: #E8907F;
+  --overlay: rgba(0, 0, 0, 0.6);
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: Mulish, "Helvetica Neue", Arial, sans-serif;
+  --space-1: 4px; --space-2: 8px; --space-3: 16px; --space-4: 24px; --space-5: 40px; --space-6: 64px; --space-7: 120px;
+  --radius-none: 0px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--black); color: var(--white); font-family: var(--font-sans); font-size: 16px; line-height: 1.6; }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--space-3); }
+
+/* Type (design-system text styles, phone first) */
+.eyebrow { font-family: var(--font-sans); font-size: 13px; font-weight: 700; letter-spacing: 0.2em; line-height: 1.4; text-transform: uppercase; color: var(--cream); margin: 0 0 var(--space-3); }
+.hero-line { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: 40px; line-height: 1.1; color: var(--cream); margin: 0; }
+.hero-line em { color: var(--gold); font-style: italic; }
+.h2 { font-family: var(--font-display); font-weight: 400; font-size: 32px; line-height: 1.2; color: var(--cream); margin: 0; }
+.body { font-size: 16px; line-height: 1.6; color: var(--white); margin: 0; }
+.small { font-size: 13px; line-height: 1.5; }
+
+/* Buttons and links (design-system components) */
+.sv-btn { display: inline-block; font-family: var(--font-sans); font-size: 14px; font-weight: 700; line-height: 1; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; text-align: center;
+  color: var(--gold); background: transparent; border: 1px solid var(--gold); border-radius: var(--radius-none); padding: var(--space-3) var(--space-5); min-height: 48px; cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease; }
+.sv-btn:hover { background: var(--gold); color: var(--black); }
+.sv-btn:focus-visible, .sv-link:focus-visible { outline: 1px solid var(--cream); outline-offset: 4px; }
+.sv-link { font-size: 14px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); text-decoration: none; padding-bottom: var(--space-1); border-bottom: 1px solid var(--gold); }
+.sv-link:hover { color: var(--gold); }
+
+/* Header */
+.site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 10; padding: var(--space-4) var(--space-3); display: flex; justify-content: space-between; align-items: center; }
+.site-header img { width: 140px; height: auto; }
+
+/* Hero: phone = full-bleed film under the overlay; desktop = split */
+.hero { position: relative; min-height: 100svh; display: grid; }
+.hero-media { position: absolute; inset: 0; overflow: hidden; background: var(--black); }
+.hero-media video, .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-media::after { content: ""; position: absolute; inset: 0; background: var(--overlay); }
+.hero-copy { position: relative; z-index: 1; align-self: end; padding: var(--space-7) var(--space-3) var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); max-width: 560px; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+
+/* Chapters */
+.chapter { padding: var(--space-6) 0; }
+.chapter--espresso { background: var(--espresso); }
+.chapter-grid { display: grid; gap: var(--space-5); }
+.chapter-copy { display: flex; flex-direction: column; gap: var(--space-4); max-width: 520px; }
+.figure { margin: 0; overflow: hidden; background: var(--black); }
+.figure img { width: 100%; height: 100%; object-fit: cover; }
+.figure--tall { aspect-ratio: 4 / 5; }
+.figure--square { aspect-ratio: 1 / 1; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+
+/* The consult: three steps */
+.chapter-head { display: flex; flex-direction: column; gap: var(--space-4); max-width: 640px; margin-bottom: var(--space-5); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-5); }
+.step { border-top: 1px solid var(--gold); padding-top: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); }
+.step-num { font-family: var(--font-display); font-style: italic; font-size: 26px; line-height: 1; color: var(--gold); }
+.step-title { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.2; color: var(--cream); margin: 0; }
+.promise { font-family: var(--font-display); font-style: italic; font-size: 26px; line-height: 1.3; color: var(--cream); margin: var(--space-6) 0 var(--space-5); }
+.promise em { color: var(--gold); }
+
+/* Footer */
+.site-footer { padding: var(--space-6) 0; border-top: 1px solid var(--espresso); }
+.site-footer .wrap { display: flex; flex-direction: column; gap: var(--space-3); }
+.site-footer img { width: 120px; height: auto; }
+.site-footer p { margin: 0; color: var(--cream); }
+
+/* Sticky book button (phone) */
+.sticky-book { position: fixed; left: var(--space-3); right: var(--space-3); bottom: var(--space-3); z-index: 20; background: var(--black); transform: translateY(150%); transition: transform 400ms var(--ease); }
+.sticky-book.is-visible { transform: none; }
+.sticky-book .sv-btn { display: block; width: 100%; }
+
+/* Motion: quiet fade-and-rise plus slow push-in, only when motion is allowed */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 900ms var(--ease), transform 900ms var(--ease); }
+  .js .reveal.is-in { opacity: 1; transform: none; }
+  .js .push img { transform: scale(1.06); transition: transform 2400ms var(--ease); }
+  .js .push.is-in img { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-media video { display: none; }
+  .hero-media .hero-still { display: block; }
+  .sticky-book { transition: none; }
+}
+
+/* Tablet 768+ */
+@media (min-width: 768px) {
+  .wrap { padding: 0 var(--space-5); }
+  .site-header { padding: var(--space-5); }
+  .hero-copy { padding: var(--space-7) var(--space-5) var(--space-6); }
+  .chapter { padding: var(--space-7) 0; }
+  .chapter-grid { grid-template-columns: 1fr 1fr; align-items: center; gap: var(--space-6); }
+  .chapter-grid--reverse > .chapter-copy { order: 2; }
+  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+  .site-footer .wrap { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+
+/* Desktop 1024+: split hero, film on the right, copy on black */
+@media (min-width: 1024px) {
+  .hero-line { font-size: 72px; }
+  .h2 { font-size: 48px; }
+  .body { font-size: 18px; }
+  .eyebrow { font-size: 14px; }
+  .step-title, .step-num { font-size: 36px; }
+  .promise { font-size: 36px; }
+  .small { font-size: 14px; }
+  .hero { grid-template-columns: 1fr calc(100svh * 9 / 16); height: 100svh; min-height: 640px; }
+  .hero-media { position: relative; grid-column: 2; grid-row: 1; inset: auto; }
+  .hero-media::after { display: none; }
+  .hero-copy { grid-column: 1; grid-row: 1; align-self: center; padding: var(--space-7) var(--space-6) var(--space-7) max(var(--space-5), calc((100vw - 1200px) / 2 + var(--space-5))); max-width: none; }
+  .hero-copy > * { max-width: 620px; }
+  .sticky-book { display: none; }
+}

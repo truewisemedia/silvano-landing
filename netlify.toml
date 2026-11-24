@@ -1,0 +1,14 @@
+# Silvano consult landing pages. Static HTML, no build step.
+[build]
+  publish = "."
+
+# The root sends visitors to the main site; ads point at /wedding/ and /business/.
+[[redirects]]
+  from = "/"
+  to = "https://wearsilvano.com"
+  status = 302
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
