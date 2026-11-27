@@ -85,3 +85,6 @@
   .hero-note { font-size: 14px; }
   .collection figcaption { font-size: 14px; }
 }
+
+/* Six-piece collection: 2 columns on phone, 3 on desktop */
+@media (min-width: 768px) { .collection--six { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1000px; margin: 0 auto; } }

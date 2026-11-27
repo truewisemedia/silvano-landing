@@ -168,3 +168,8 @@ a { color: inherit; }
 /* Hero still: only shown when reduced motion is on (otherwise it covered the film) */
 .hero-media .hero-still { display: none; }
 @media (prefers-reduced-motion: reduce) { .hero-media .hero-still { display: block; } }
+
+/* Process steps with real photos */
+.step-figure { aspect-ratio: 1 / 1; margin: 0 0 var(--space-3); }
+.step { border-top: 0; padding-top: 0; }
+.step .step-num { margin-top: var(--space-2); }
